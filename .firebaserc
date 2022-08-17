@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "loginfirebase-7d495": {
+      "hosting": {
+        "login": [
+          "loginfirebase-7d495"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "loginfirebase-7d495"
+  }
+}
