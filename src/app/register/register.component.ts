@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup,FormsModule,ReactiveFormsModule } from '@angular/forms';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 import { UserService } from 'src/app/services/user.service';
 
@@ -16,7 +17,8 @@ export class RegisterComponent implements OnInit {
   formReg: FormGroup;
   constructor(
     private userService: UserService,
-    private router: Router
+    private router: Router,
+    public snackBar: MatSnackBar
   ) {
     this.formReg = new FormGroup({
       email: new FormControl(),
@@ -34,8 +36,18 @@ export class RegisterComponent implements OnInit {
     this.userService.register(this.email,this.password)
       .then(response => {
         console.log(response);
-        this.router.navigate(['/login']);
+        this.formularioIncorrecto=false;
+        this.resetCampos();
+        this.snackBar.open('El usuario se registro correctamente','',{
+          duration:3000
+        })
+        //this.router.navigate(['/login']);
       })
       .catch(error => console.log(error));
+      this.formularioIncorrecto=true;
+  }
+  resetCampos(){
+    this.email='';
+    this.password='';
   }
 }

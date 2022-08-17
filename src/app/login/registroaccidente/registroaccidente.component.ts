@@ -25,4 +25,5 @@ export class RegistroaccidenteComponent implements OnInit {
     .catch(error=>console.log(error));  
   }
 
+
 }

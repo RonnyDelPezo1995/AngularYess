@@ -1,16 +1,28 @@
 <app-navbar></app-navbar>
+<div class="container mt-4">
 <div class="card">
     <div class="card-body">
-        <h2>Registro de usuario</h2>
-        <div class="form-group mb-3">
-            <label class="form-label">Email</label>
-            <input type="text" id="email" [(ngModel)]="email" class="form-control">
+        <div class="text-center">
+
+            <h2>Registro de usuario</h2>
+            <span *ngIf="formularioIncorrecto" class="badge text-bg-danger">TODOS LOS CAMPOS SON OBLIGATORIOS</span>
         </div>
         <div class="form-group mb-3">
-            <label class="form-label">Password</label>
-        <input type="password" id="password" [(ngModel)]="password" class="form-control">
+            <label class="form-label">Correo Electronico</label>
+            <input type="text" id="email" [(ngModel)]="email" class="form-control" placeholder="usuario@gmail.com">
         </div>
-        <button (click)="registrarUsuario()" class="btn btn-primary btn-block">Registrar</button>
+        <div class="form-group mb-3">
+            <label class="form-label">Contraseña</label>
+        <input type="password" id="password" [(ngModel)]="password" class="form-control" placeholder="Contraseña minima 6 caracteres">
+        </div>
+        <div class="d-flex justify-content-between">
+            <div class="mr-auto p-2"><button [routerLink]="['/inicio']"  class="btn btn-primary btn-block btn-xl">Atrás</button></div>
+            
+            <div class="ml-auto p-2"><button (click)="registrarUsuario()" data-toggle="modal" data-target=".bd-example-modal-sm" class="btn btn-primary btn-block btn-xl">Registrar</button>
+        </div>
+
     </div>
+</div>
+</div>
 </div>
 <app-footer></app-footer>

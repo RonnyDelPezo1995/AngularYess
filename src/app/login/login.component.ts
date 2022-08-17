@@ -30,8 +30,9 @@ export class LoginComponent implements OnInit {
       .then(response => {
         console.log(response);
         this.router.navigate(['/registroaccidente']);
+        this.formularioIncorrecto=false;
       })
       .catch(error => console.log(error));
-      this.router.navigate(['/register']);
+      this.formularioIncorrecto=true;
   }
 }
