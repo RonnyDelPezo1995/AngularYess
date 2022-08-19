@@ -1,26 +1,27 @@
 <app-navbar></app-navbar>
 <div class="container mt-4">
-    
-<div class="card">
-    <div class="card-body">
-        <div class="text-center">
+
+    <div class="card">
+        <div class="card-body">
+            <div class="text-center">
+                <h2>Iniciar Sesión</h2>
+                <span *ngIf="formularioIncorrecto" class="badge text-bg-danger">DATOS INCORRECTOS O USUARIO NO
+                    REGISTRADO</span>
+            </div>
             <h2>Iniciar Sesión</h2>
-            <span *ngIf="formularioIncorrecto" class="badge text-bg-danger">DATOS INCORRECTOS O USUARIO NO REGISTRADO</span>
+            <div class="form-group mb-3">
+                <label class="form-label">Correo Electronico</label>
+                <input type="text" id="email" [(ngModel)]="email" class="form-control">
+            </div>
+            <div class="form-group mb-3">
+                <label class="form-label">Contraseña</label>
+                <input type="password" id="password" [(ngModel)]="password" class="form-control">
+            </div>
+            <div class="d-flex justify-content-between">
+                <button [routerLink]="['/inicio']" class="btn btn-primary btn-block btn-xl">Atrás</button>
+                <button (click)="iniciarSesion()" class="btn btn-primary btn-block btn-xl">Iniciar Sesion</button>
+            </div>
         </div>
-        <h2>Iniciar Sesión</h2>
-        <div class="form-group mb-3">
-            <label class="form-label">Correo Electronico</label>
-            <input type="text" id="email" [(ngModel)]="email" class="form-control">
-        </div>
-        <div class="form-group mb-3">
-            <label class="form-label">Contraseña</label>
-        <input type="password" id="password" [(ngModel)]="password" class="form-control">
-        </div>
-        <div class="d-flex justify-content-between">
-        <button [routerLink]="['/inicio']" class="btn btn-primary btn-block btn-xl">Atrás</button>
-        <button (click)="iniciarSesion()" class="btn btn-primary btn-block btn-xl">Iniciar Sesion</button>
     </div>
-    </div>
-</div>
 </div>
 <app-footer></app-footer>

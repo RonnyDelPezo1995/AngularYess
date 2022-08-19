@@ -10,3 +10,18 @@
     border-color: #ee4b08;
     border-width: 4px;
 }
+.contenedor{
+    position: relative;
+}
+.centro{
+    width: 50px;
+  height: 50px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: -25px 0 0 -25px; /* aplicar a top y al margen izquierdo un valor negativo para completar el centrado del elemento hijo */
+}
+.todo{
+    height:75vh;
+}
+
