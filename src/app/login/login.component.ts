@@ -3,6 +3,9 @@ import { FormControl, FormGroup,FormsModule,ReactiveFormsModule } from '@angular
 import { Router } from '@angular/router';
 import { UserService } from 'src/app/services/user.service';
 
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { timeInterval } from 'rxjs';
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -15,7 +18,8 @@ export class LoginComponent implements OnInit {
   formularioIncorrecto=false;
   constructor(
     private userService: UserService,
-    private router: Router
+    private router: Router,
+    public snackBar: MatSnackBar
   ) { }
 
   ngOnInit(): void {
@@ -30,9 +34,14 @@ export class LoginComponent implements OnInit {
       .then(response => {
         console.log(response);
         this.router.navigate(['/registroaccidente']);
-        this.formularioIncorrecto=false;
+        this.snackBar.open('Inicio de Sesion exitoso','',{
+          duration:3000
+        })
       })
       .catch(error => console.log(error));
-      this.formularioIncorrecto=true;
+      this.snackBar.open('Los Datos son incorrectos','',{
+        duration:1000
+      })
+      
   }
 }

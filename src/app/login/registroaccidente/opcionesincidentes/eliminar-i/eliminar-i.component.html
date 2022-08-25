@@ -1,1 +1,41 @@
-<p>eliminar-i works!</p>
+<app-navbar></app-navbar>
+<div class="todo">
+    <div class="text-center">
+        <br>
+        <h2>Modificar Accidentes</h2>
+        <br>
+    </div>
+    <br>
+    <div>
+        <table class="table table-striped mt-5">
+            <thead>
+                <tr>
+                    <th>Código</th>
+                    <th>Nombre </th>
+                    <th>Tipo</th>
+                    <th>Riesgo</th>
+                    <th>Fecha</th>
+                    <th>Motivo</th>
+                    <th>Eliminar</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let incidente of listIncidentes">
+                    <td>{{incidente.codigo}}</td>
+                    <td>{{incidente.nombre}}</td>
+                    <td>{{incidente.tipo}}</td>
+                    <td>{{incidente.riesgo}}</td>
+                    <td>{{incidente.fechaIncidente}}</td>
+                    <td>{{incidente.motivo}}</td>
+                    <td>
+                        <i class="fa-solid fa-trash-can far" (click)="borrarIncidente(incidente)"></i>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <br>
+        <div class="d-flex justify-content-between">
+            <button [routerLink]="['/opcionesincidentes']" class="btn btn-primary btn-block btn-xl">Atrás</button>
+        </div>
+</div>
+</div>

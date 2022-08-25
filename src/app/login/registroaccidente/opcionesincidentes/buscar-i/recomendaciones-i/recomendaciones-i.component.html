@@ -1,0 +1,23 @@
+<h1 mat-dialog-title>Recomendaciones</h1>
+<div mat-dialog-content>
+
+        <ul *ngIf="data.tipo === 'Químico'">
+            <h2>ACCIDENTES QUÍMICOS</h2>
+            <li>Sustitución de agentes químicos peligrosos.</li>
+            <li>Organización del lugar de trabajo.</li>
+            <li>Adopción de medidas higiénicas adecuadas, tanto personales como de orden y limpieza.</li>
+        </ul>
+        <ul *ngIf="data.tipo === 'Agentes Biológicos'">
+            <h2>ACCIDENTES AGENTES BIÓLOGICOS</h2>
+            <li>Evite la formación de aerosoles y polvos, incluso en labores de mantenimiento.</li>
+            <li>Higiene en los procedimientos de trabajo y el uso de letreros de advertencia adecuados son elementos básicos de condiciones de trabajo seguras.</li>
+            <li>Descontaminación de residuos, equipos y prendas de vestir, y medidas higiénicas apropiadas para los trabajadores</li>
+            
+        </ul>
+        <ul *ngIf="data.tipo === 'Posturas'">
+            <h2>ACCIDENTES POSTURAS</h2>
+            <li>Conviene tener una silla con respaldo ajustable; que los pies lleguen al suelo, y el peso del cuerpo se sostenga con los glúteos y no con los muslos.</li>
+            <li>Tener la pantalla a una altura un poco más baja que la de los ojos; que los objetos de la mesa se tiene que poder alcanzar sin problemas, y hacer estiramientos leves cada hora.</li>
+        </ul>
+  
+</div>

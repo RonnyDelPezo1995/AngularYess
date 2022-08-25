@@ -10,11 +10,11 @@ import { FooterComponent } from './login/footer/footer.component';
 import { RegistroaccidenteComponent } from './login/registroaccidente/registroaccidente.component';
 import { RegisterComponent } from './register/register.component';
 import { InicioComponent } from './inicio/inicio.component';
-import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
+import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
 import { environment } from '../environments/environment';
-import { provideAuth,getAuth } from '@angular/fire/auth';
+import { provideAuth, getAuth } from '@angular/fire/auth';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {MatSnackBarModule} from '@angular/material/snack-bar';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { OpcionesaccidentesComponent } from './login/registroaccidente/opcionesaccidentes/opcionesaccidentes.component';
 import { OpcionesincidentesComponent } from './login/registroaccidente/opcionesincidentes/opcionesincidentes.component';
 import { RegistrarAComponent } from './login/registroaccidente/opcionesaccidentes/registrar-a/registrar-a.component';
@@ -27,10 +27,17 @@ import { EliminarIComponent } from './login/registroaccidente/opcionesincidentes
 import { BuscarIComponent } from './login/registroaccidente/opcionesincidentes/buscar-i/buscar-i.component';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from "@angular/material/form-field";
-import {MatDatepickerModule} from '@angular/material/datepicker';
+import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
-import {MatSelectModule} from '@angular/material/select';
-
+import { MatSelectModule } from '@angular/material/select';
+import { ReactiveFormsModule } from '@angular/forms';
+import { provideFirestore, getFirestore } from '@angular/fire/firestore';
+import { ModificarindividualaccidenteComponent } from './login/registroaccidente/opcionesaccidentes/modificar-a/modificarindividualaccidente/modificarindividualaccidente.component';
+import { MatTableModule } from '@angular/material/table';
+import {MatDialogModule} from '@angular/material/dialog';
+import { RecomendacionesAComponent } from './login/registroaccidente/opcionesaccidentes/buscar-a/recomendaciones-a/recomendaciones-a.component';
+import { ModificarindividualincidenteComponent } from './login/registroaccidente/opcionesincidentes/modificar-i/modificarindividualincidente/modificarindividualincidente.component';
+import { RecomendacionesIComponent } from './login/registroaccidente/opcionesincidentes/buscar-i/recomendaciones-i/recomendaciones-i.component';
 
 @NgModule({
   declarations: [
@@ -51,7 +58,10 @@ import {MatSelectModule} from '@angular/material/select';
     ModificarIComponent,
     EliminarIComponent,
     BuscarIComponent,
-    
+    ModificarindividualaccidenteComponent,
+    RecomendacionesAComponent,
+    ModificarindividualincidenteComponent,
+    RecomendacionesIComponent
   ],
   imports: [
     BrowserModule,
@@ -65,7 +75,11 @@ import {MatSelectModule} from '@angular/material/select';
     MatInputModule,
     MatDatepickerModule,
     MatNativeDateModule,
-    MatSelectModule
+    MatSelectModule,
+    ReactiveFormsModule,
+    provideFirestore(() => getFirestore()),
+    MatTableModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]

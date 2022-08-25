@@ -2,35 +2,35 @@ import { Injectable } from '@angular/core';
 import { Firestore,addDoc,collectionData } from '@angular/fire/firestore';
 import { collection } from '@firebase/firestore';
 import { Observable, Subject } from 'rxjs';
-import { Accidente } from '../models/Accidente';
+import { Incidente } from '../models/Incidente';
 import { doc, getDoc } from "firebase/firestore";
 import {  updateDoc,deleteDoc } from "firebase/firestore";
 
 @Injectable({
   providedIn: 'root'
 })
-export class AccidenteService {
+export class IncidenteService {
 
-  private accidente$= new Subject<any>;
+  private incidente$= new Subject<any>;
 
 
   
   constructor(private firebase:Firestore) { }
 
-  guardarAccidente(accidente: Accidente){
-    const accidenteRef = collection(this.firebase,'accidentes');
-    return addDoc(accidenteRef,accidente)
+  guardarIncidente(incidente: Incidente){
+    const incidenteRef = collection(this.firebase,'incidentes');
+    return addDoc(incidenteRef,incidente)
   }
 
-  obtenerAccidentes():Observable<Accidente[]>{
-    const accidenteRef = collection(this.firebase,'accidentes');
+  obtenerIncidentes():Observable<Incidente[]>{
+    const incidenteRef = collection(this.firebase,'incidentes');
     
-    return collectionData(accidenteRef,{idField:'id'}) as Observable<Accidente[]>
+    return collectionData(incidenteRef,{idField:'id'}) as Observable<Incidente[]>
 
   }
 
-  async obtenerAccidente(id:string):Promise<Accidente>{
-    const docRef = doc(this.firebase, "accidentes", id);
+  async obtenerIncidente(id:string):Promise<Incidente>{
+    const docRef = doc(this.firebase, "incidentes", id);
     
     const docSnap = await getDoc(docRef);
     if (docSnap.exists()) {
@@ -39,7 +39,7 @@ export class AccidenteService {
       // doc.data() will be undefined in this case
       console.log("No such document!");
     }
-    return docSnap.data() as Accidente;
+    return docSnap.data() as Incidente;
   }
 
  /// async actualizarAccidente1(data:any,id:string):Observable<any>{
@@ -47,15 +47,15 @@ export class AccidenteService {
    // return updateDoc(documento);
  // }
 
-  actualizarAccidente(accidente:Accidente,id:string){
-    const accidenteRef = doc(this.firebase,`accidentes/${id}`);
-    return updateDoc(accidenteRef,{
-      codigo:accidente.codigo,
-      nombre:accidente.nombre,
-      tipo:accidente.tipo,
-      riesgo:accidente.riesgo,
-      fechaAccidente:accidente.fechaAccidente,
-      motivo:accidente.motivo
+  actualizarIncidente(incidente:Incidente,id:string){
+    const incidenteRef = doc(this.firebase,`incidentes/${id}`);
+    return updateDoc(incidenteRef,{
+      codigo:incidente.codigo,
+      nombre:incidente.nombre,
+      tipo:incidente.tipo,
+      riesgo:incidente.riesgo,
+      fechaIncidente:incidente.fechaIncidente,
+      motivo:incidente.motivo
     });
   }
 
@@ -69,9 +69,9 @@ export class AccidenteService {
 //});
 // [END update_document_modular]
 
-  borrarAccidente(accidente:Accidente){
-    const accidenteRef = doc(this.firebase,`accidentes/${accidente.id}`);
-    return deleteDoc(accidenteRef);
+  borrarAccidente(incidente:Incidente){
+    const incidenteRef = doc(this.firebase,`incidentes/${incidente.id}`);
+    return deleteDoc(incidenteRef);
   }
 
 

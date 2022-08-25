@@ -1,1 +1,54 @@
-<p>buscar-i works!</p>
+<app-navbar></app-navbar>
+<div class="todo">
+    <div class="text-center">
+        <br>
+        <h2>Buscar Incidentes</h2>
+        <br>
+    </div>
+    <br>
+    <div class="example-contain">
+        <mat-form-field appearance="standard" class="example-contain">
+            <mat-label>Buscar</mat-label>
+            <input matInput (keyup)="applyFilter($event)" placeholder="Ex. ACC001" #input>
+          </mat-form-field>
+        <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 example-contain">
+
+            <ng-container matColumnDef="codigo">
+                <th mat-header-cell *matHeaderCellDef> Código </th>
+                <td mat-cell *matCellDef="let element"> {{element.codigo}} </td>
+            </ng-container>
+            <ng-container matColumnDef="nombre">
+                <th mat-header-cell *matHeaderCellDef> Nombre </th>
+                <td mat-cell *matCellDef="let element"> {{element.nombre}} </td>
+            </ng-container>
+            <ng-container matColumnDef="tipo">
+                <th mat-header-cell *matHeaderCellDef> Tipo </th>
+                <td mat-cell *matCellDef="let element"> {{element.tipo}} </td>
+            </ng-container>
+            <ng-container matColumnDef="riesgo">
+                <th mat-header-cell *matHeaderCellDef> Riesgo </th>
+                <td mat-cell *matCellDef="let element"> {{element.riesgo}} </td>
+            </ng-container>
+            <ng-container matColumnDef="fecha">
+                <th mat-header-cell *matHeaderCellDef> Fecha </th>
+                <td mat-cell *matCellDef="let element"> {{element.fechaIncidente}} </td>
+            </ng-container>
+            <ng-container matColumnDef="motivo">
+                <th mat-header-cell *matHeaderCellDef> Motivo </th>
+                <td mat-cell *matCellDef="let element"> {{element.motivo}} </td>
+            </ng-container>
+            <ng-container matColumnDef="acciones">
+                <th mat-header-cell *matHeaderCellDef> Recomendaciones </th>
+                <td mat-cell *matCellDef="let element"> <i (click)="abrirRecomendaciones(element.tipo)" class="fa-solid fa-clipboard-list far grande" ></i> </td>
+            </ng-container>
+    
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+        <br>
+        <div class="d-flex justify-content-between">
+            <button [routerLink]="['/opcionesincidentes']" class="btn btn-primary btn-block btn-xl">Atrás</button>
+        </div>
+
+    </div>
+</div>

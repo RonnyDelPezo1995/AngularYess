@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from 'src/app/services/user.service';
 import { Router } from '@angular/router';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-registroaccidente',
@@ -11,7 +12,8 @@ export class RegistroaccidenteComponent implements OnInit {
 
   constructor(
     private userService:UserService,
-    private router:Router
+    private router:Router,
+    public snackBar: MatSnackBar
   ) { }
 
   ngOnInit(): void {

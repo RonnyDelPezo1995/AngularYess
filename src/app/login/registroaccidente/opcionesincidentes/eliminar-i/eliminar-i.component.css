@@ -1,0 +1,21 @@
+.far{
+    cursor:pointer;
+    margin-right: 7px;
+}
+table {
+    width: 100%;
+  }
+
+
+  .btn-xl{
+    background-color: #ff7130;
+    border-color: #ff7130;
+    padding: 1rem 2rem;
+    border-radius: 300px;
+}
+
+.btn-xl:hover{
+    background-color: #ee4b08;
+    border-color: #ee4b08;
+    border-width: 4px;
+}

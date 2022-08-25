@@ -2,7 +2,7 @@
 <div class="todo">
     <div class="text-center">
         <br>
-        <h2>Registrar Accidente</h2>
+        <h2>Modificar Accidente</h2>
         <br>
     </div>
     <br>
@@ -94,8 +94,8 @@
     </div>
 
     <div class="d-flex justify-content-between">
-        <button [routerLink]="['/login/registroaccidente/opcionesaccidentes']"
+        <button [routerLink]="['/modificarA']"
             class="btn btn-primary btn-block btn-xl">Atrás</button>
-        <button class="btn btn-primary btn-block btn-xl" [disabled]="myForm.invalid" (click)="guardarAccidente()">Guardar</button>
+        <button class="btn btn-primary btn-block btn-xl" [disabled]="myForm.invalid" (click)="obtenernuevoAccidente()" >Modificar</button>
     </div>
 </div>
