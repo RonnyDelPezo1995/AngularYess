@@ -23,6 +23,7 @@ export class RegistrarIComponent implements OnInit {
     public snackBar: MatSnackBar) {
       this.myForm=this.fb.group({
         codigo:['',[Validators.required,Validators.maxLength(6)]],
+        cedula:['',[Validators.required,Validators.minLength(10)]],
         nombre:['',Validators.required],
         tipo:['',Validators.required],
         riesgo:['',Validators.required],
@@ -37,6 +38,7 @@ export class RegistrarIComponent implements OnInit {
   async guardarIncidente(){
     const incidente:Incidente={
       codigo: this.myForm.get('codigo')?.value,
+      cedula: this.myForm.get('cedula')?.value,
       nombre: this.myForm.get('nombre')?.value,
       tipo: this.myForm.get('tipo')?.value,
       riesgo: this.myForm.get('riesgo')?.value,

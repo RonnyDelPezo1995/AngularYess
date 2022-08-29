@@ -15,7 +15,7 @@ export class BuscarIComponent implements OnInit {
 
   listIncidentes: Incidente[] = [];
 
-  displayedColumns: string[] = ['codigo', 'nombre', 'tipo', 'riesgo', 'fecha', 'motivo', 'acciones'];
+  displayedColumns: string[] = ['codigo','cedula', 'nombre', 'tipo', 'riesgo', 'fecha', 'motivo', 'acciones'];
   dataSource = new MatTableDataSource(this.listIncidentes);
   constructor(private _incidenteService: IncidenteService,
     public dialog: MatDialog) { }

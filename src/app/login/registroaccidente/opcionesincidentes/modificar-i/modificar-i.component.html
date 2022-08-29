@@ -11,6 +11,7 @@
             <thead>
                 <tr>
                     <th>Código</th>
+                    <th>Cédula</th>
                     <th>Nombre </th>
                     <th>Tipo</th>
                     <th>Riesgo</th>
@@ -22,6 +23,7 @@
             <tbody>
                 <tr *ngFor="let incidente of listIncidentes">
                     <td>{{incidente.codigo}}</td>
+                    <td>{{incidente.cedula}}<td>
                     <td>{{incidente.nombre}}</td>
                     <td>{{incidente.tipo}}</td>
                     <td>{{incidente.riesgo}}</td>

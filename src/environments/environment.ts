@@ -4,13 +4,13 @@
 
 export const environment = {
   firebase: {
-    projectId: 'loginfirebase-7d495',
-    appId: '1:855448263696:web:d9cb175c96d3fa63523e95',
-    storageBucket: 'loginfirebase-7d495.appspot.com',
+    projectId: 'registroaccidente2022',
+    appId: '1:468549445286:web:b1a693f5ccedecb788b667',
+    storageBucket: 'registroaccidente2022.appspot.com',
     locationId: 'southamerica-east1',
-    apiKey: 'AIzaSyD3zcwnF90Uf_HizgdYlJ5cLOw0Vc7HSUY',
-    authDomain: 'loginfirebase-7d495.firebaseapp.com',
-    messagingSenderId: '855448263696',
+    apiKey: 'AIzaSyCdtMYxz7Nmyqb6UvcVRdCYLW1KYnRXJ4A',
+    authDomain: 'registroaccidente2022.firebaseapp.com',
+    messagingSenderId: '468549445286',
   },
   production: false
 };

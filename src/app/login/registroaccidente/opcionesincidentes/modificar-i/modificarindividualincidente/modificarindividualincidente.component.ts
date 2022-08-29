@@ -24,6 +24,7 @@ export class ModificarindividualincidenteComponent implements OnInit {
     public snackBar: MatSnackBar) { 
       this.myForm=this.fb.group({
         codigo:['',[Validators.required,Validators.maxLength(6)]],
+        cedula:['',[Validators.required,Validators.minLength(10)]],
         nombre:['',Validators.required],
         tipo:['',Validators.required],
         riesgo:['',Validators.required],
@@ -44,6 +45,7 @@ export class ModificarindividualincidenteComponent implements OnInit {
         this.incidente=response;
         this.myForm=this.fb.group({
           codigo:[this.incidente.codigo,[Validators.required,Validators.maxLength(6)]],
+          cedula:[this.incidente.cedula,[Validators.required,Validators.minLength(10)]],
           nombre:[this.incidente.nombre,Validators.required],
           tipo:[this.incidente.tipo,Validators.required],
           riesgo:[this.incidente.riesgo,Validators.required],
@@ -57,6 +59,7 @@ export class ModificarindividualincidenteComponent implements OnInit {
 obtenernuevoIncidente(){
   const incidente:Incidente={
     codigo: this.myForm.get('codigo')?.value,
+    cedula: this.myForm.get('cedula')?.value,
     nombre: this.myForm.get('nombre')?.value,
     tipo: this.myForm.get('tipo')?.value,
     riesgo: this.myForm.get('riesgo')?.value,

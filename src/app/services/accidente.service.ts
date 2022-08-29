@@ -42,15 +42,12 @@ export class AccidenteService {
     return docSnap.data() as Accidente;
   }
 
- /// async actualizarAccidente1(data:any,id:string):Observable<any>{
-   // const documento = doc(this.firebase, `accidentes/${accidente.id}`);
-   // return updateDoc(documento);
- // }
 
   actualizarAccidente(accidente:Accidente,id:string){
     const accidenteRef = doc(this.firebase,`accidentes/${id}`);
     return updateDoc(accidenteRef,{
       codigo:accidente.codigo,
+      cedula:accidente.cedula,
       nombre:accidente.nombre,
       tipo:accidente.tipo,
       riesgo:accidente.riesgo,
@@ -59,26 +56,12 @@ export class AccidenteService {
     });
   }
 
-  //import { doc, updateDoc } from "firebase/firestore";
-
-//const washingtonRef = doc(db, "cities", "DC");
-
-// Set the "capital" field of the city 'DC'
-//await updateDoc(washingtonRef, {
-  //capital: true
-//});
-// [END update_document_modular]
 
   borrarAccidente(accidente:Accidente){
     const accidenteRef = doc(this.firebase,`accidentes/${accidente.id}`);
     return deleteDoc(accidenteRef);
   }
 
-
-  //import { doc, deleteDoc } from "firebase/firestore";
-
-  //await deleteDoc(doc(db, "cities", "DC"));
-  // [END delete_document_modular]
 
 
 

@@ -15,7 +15,7 @@ export class ModificarIComponent implements OnInit {
 
   listIncidentes: Incidente[]= [];
 
-  displayedColumns: string[] = ['codigo', 'nombre', 'tipo', 'riesgo','fecha','motivo','acciones'];
+  displayedColumns: string[] = ['codigo','cedula', 'nombre', 'tipo', 'riesgo','fecha','motivo','acciones'];
   dataSource = this.listIncidentes;
   constructor(private _incidenteService: IncidenteService) { }
 

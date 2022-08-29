@@ -15,7 +15,7 @@ import { RecomendacionesAComponent } from './recomendaciones-a/recomendaciones-a
 export class BuscarAComponent implements OnInit {
   listAccidentes: Accidente[] = [];
 
-  displayedColumns: string[] = ['codigo', 'nombre', 'tipo', 'riesgo', 'fecha', 'motivo', 'acciones'];
+  displayedColumns: string[] = ['codigo','cedula','nombre', 'tipo', 'riesgo', 'fecha', 'motivo', 'acciones'];
   dataSource = new MatTableDataSource(this.listAccidentes);
   constructor(private _accidenteService: AccidenteService,
     public dialog: MatDialog) { }

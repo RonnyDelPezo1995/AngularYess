@@ -51,6 +51,7 @@ export class IncidenteService {
     const incidenteRef = doc(this.firebase,`incidentes/${id}`);
     return updateDoc(incidenteRef,{
       codigo:incidente.codigo,
+      cedula:incidente.cedula,
       nombre:incidente.nombre,
       tipo:incidente.tipo,
       riesgo:incidente.riesgo,
@@ -59,15 +60,6 @@ export class IncidenteService {
     });
   }
 
-  //import { doc, updateDoc } from "firebase/firestore";
-
-//const washingtonRef = doc(db, "cities", "DC");
-
-// Set the "capital" field of the city 'DC'
-//await updateDoc(washingtonRef, {
-  //capital: true
-//});
-// [END update_document_modular]
 
   borrarAccidente(incidente:Incidente){
     const incidenteRef = doc(this.firebase,`incidentes/${incidente.id}`);
@@ -75,13 +67,6 @@ export class IncidenteService {
   }
 
 
-  //import { doc, deleteDoc } from "firebase/firestore";
 
-  //await deleteDoc(doc(db, "cities", "DC"));
-  // [END delete_document_modular]
-
-
-
-  
   
 }

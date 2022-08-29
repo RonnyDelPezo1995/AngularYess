@@ -13,7 +13,7 @@ import { AccidenteService } from 'src/app/services/accidente.service';
 export class ModificarAComponent implements OnInit {
   listAccidentes: Accidente[]= [];
 
-  displayedColumns: string[] = ['codigo', 'nombre', 'tipo', 'riesgo','fecha','motivo','acciones'];
+  displayedColumns: string[] = ['codigo','cedula','nombre', 'tipo', 'riesgo','fecha','motivo','acciones'];
   dataSource = this.listAccidentes;
   constructor(private _accidenteService: AccidenteService) { }
   
