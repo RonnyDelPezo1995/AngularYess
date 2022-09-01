@@ -14,4 +14,18 @@ export class RecomendacionesAComponent implements OnInit {
   console.log(this.data);
   }
 
+  //printer() {
+  //  const printContent = document.getElementById("print");
+  //  const WindowPrt = window.open('', '', 'left=0,top=50,width=900,height=900,toolbar=0,scrollbars=0,status=0');
+ //   WindowPrt.document.write(printContent.innerHTML);
+  //  WindowPrt.document.close();
+  //  WindowPrt.focus();
+  //  WindowPrt.print();
+  //  WindowPrt.close();
+  //}
+
+  printer() {
+    window.print();
+  }
+
 }

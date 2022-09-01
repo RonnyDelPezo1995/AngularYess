@@ -38,6 +38,7 @@ import {MatDialogModule} from '@angular/material/dialog';
 import { RecomendacionesAComponent } from './login/registroaccidente/opcionesaccidentes/buscar-a/recomendaciones-a/recomendaciones-a.component';
 import { ModificarindividualincidenteComponent } from './login/registroaccidente/opcionesincidentes/modificar-i/modificarindividualincidente/modificarindividualincidente.component';
 import { RecomendacionesIComponent } from './login/registroaccidente/opcionesincidentes/buscar-i/recomendaciones-i/recomendaciones-i.component';
+import { InformesComponent } from './informes/informes.component';
 
 @NgModule({
   declarations: [
@@ -61,7 +62,8 @@ import { RecomendacionesIComponent } from './login/registroaccidente/opcionesinc
     ModificarindividualaccidenteComponent,
     RecomendacionesAComponent,
     ModificarindividualincidenteComponent,
-    RecomendacionesIComponent
+    RecomendacionesIComponent,
+    InformesComponent
   ],
   imports: [
     BrowserModule,

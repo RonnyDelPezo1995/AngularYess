@@ -7,7 +7,92 @@
     </div>
     <br>
 </div>
-<div class="container mt-4">
+<form [formGroup]="myForm" autocomplete="off">
+    <table class="tftable">
+        <tr>
+            <th>
+                <mat-form-field class="example-contain" [style.fontSize.px]=16>
+                    <mat-label>Código</mat-label>
+                    <input matInput formControlName="codigo">
+                </mat-form-field>
+
+            </th>
+            <th>
+                <mat-form-field class="example-contain" [style.fontSize.px]=16>
+                    <mat-label>Apellidos y Nombres</mat-label>
+                    <input matInput formControlName="nombre">
+                </mat-form-field>
+
+            </th>
+        </tr>
+        <tr>
+            <td>
+
+                <mat-form-field class="example-contain" [style.fontSize.px]=16>
+                    <mat-label>Cedula</mat-label>
+                    <input matInput formControlName="cedula">
+                </mat-form-field>
+
+            </td>
+            <td>
+                <mat-form-field class="example-contain" [style.fontSize.px]=16>
+                    <mat-label>Edad</mat-label>
+                    <input matInput formControlName="edad">
+                </mat-form-field>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <mat-form-field class="example-contain" [style.fontSize.px]=16>
+                    <mat-label>Lugar</mat-label>
+                    <input matInput formControlName="lugar">
+                </mat-form-field>
+
+            </td>
+            <td>
+                <mat-form-field class="example-contain" [style.fontSize.px]=16>
+                    <mat-label>Fecha y Hora de Incidente</mat-label>
+                    <input matInput formControlName="fechaIncidente" placeholder="dd/mm/yyyy hh:mm">
+                </mat-form-field>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <mat-form-field class="example-contain" [style.fontSize.px]=16>
+                    <mat-label>Testigo</mat-label>
+                    <input matInput formControlName="testigo">
+                </mat-form-field>
+            </td>
+            <td>
+                <mat-form-field class="example-contain" [style.fontSize.px]=16>
+                    <mat-label>Fotografia</mat-label>
+                    <input matInput formControlName="fotografia">
+                </mat-form-field>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <mat-form-field class="example-contain" [style.fontSize.px]=16>
+                    <mat-label>Descripcion</mat-label>
+                    <input matInput formControlName="descripcion">
+                </mat-form-field>
+            </td>
+            <td>
+
+            </td>
+        </tr>
+    </table>
+    <div class="d-flex justify-content-between">
+        <button [routerLink]="['/login/registroaccidente/opcionesincidentes']"
+            class="btn btn-primary btn-block btn-xl">Atrás</button>
+        <button class="btn btn-primary btn-block btn-xl" [disabled]="myForm.invalid"
+            (click)="obtenernuevoIncidente()">Modificar</button>
+
+    </div>
+</form>
+<!--<div class="container mt-4">
     <div class="row">
         <div class="col-lg-4">
             <form [formGroup]="myForm" autocomplete="off">
@@ -105,3 +190,4 @@
         <button class="btn btn-primary btn-block btn-xl" [disabled]="myForm.invalid" (click)="obtenernuevoIncidente()" >Modificar</button>
     </div>
 </div>
+-->

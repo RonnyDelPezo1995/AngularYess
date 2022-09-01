@@ -12,23 +12,25 @@
                 <tr>
                     <th>Código</th>
                     <th>Cédula</th>
-                    <th>Nombre </th>
-                    <th>Tipo</th>
-                    <th>Riesgo</th>
-                    <th>Fecha</th>
-                    <th>Motivo</th>
+                    <th>Nombre y Apellido</th>
+                    <th>Edad</th>
+                    <th>Lugar</th>
+                    <th>Fecha y Hora</th>
+                    <th>Testigo</th>
+                    <th>Descripción</th>
                     <th>Modificar</th>
                 </tr>
             </thead>
             <tbody>
                 <tr *ngFor="let incidente of listIncidentes">
                     <td>{{incidente.codigo}}</td>
-                    <td>{{incidente.cedula}}<td>
+                    <td>{{incidente.cedula}}</td>
                     <td>{{incidente.nombre}}</td>
-                    <td>{{incidente.tipo}}</td>
-                    <td>{{incidente.riesgo}}</td>
+                    <td>{{incidente.edad}}</td>
+                    <td>{{incidente.lugar}}</td>
                     <td>{{incidente.fechaIncidente}}</td>
-                    <td>{{incidente.motivo}}</td>
+                    <td>{{incidente.testigo}}</td>
+                    <td>{{incidente.descripcion}}</td>
                     <td>
                         <i class="fa-solid fa-pen-clip text-info far" [routerLink]="['/modificarindividualincidente/',incidente.id]"></i>
                     </td>

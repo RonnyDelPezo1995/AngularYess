@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-inicio',
@@ -7,7 +8,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InicioComponent implements OnInit {
 
-  constructor() { }
+  constructor(private titulo:Title) {
+    titulo.setTitle('Registro de Accidente e Incidentes Laborales')
+   }
 
   ngOnInit(): void {
   }

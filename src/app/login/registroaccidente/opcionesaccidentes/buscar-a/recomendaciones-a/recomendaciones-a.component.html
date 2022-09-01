@@ -1,50 +1,56 @@
-<h1 mat-dialog-title>Recomendaciones</h1>
-<div mat-dialog-content>
 
-        <ul *ngIf="data.tipo === 'Físico'">
-            <h2>ACCIDENTES FÍSICOS</h2>
-            <li>Ubicar puestos de trabajo alejados de las fuentes sonoras.</li>
-            <li>Separar equipos que generen altos niveles de ruido.</li>
-            <li>Utilizar tapones auditivos para trabajos continuos en ambientes con alto ruido ambiental.</li>
-            <li>Evitar la presencia innecesaria de fuentes sonoras adicionales.</li>
-        </ul>
-        <ul *ngIf="data.tipo === 'Mecánico'">
-            <h2>ACCIDENTES MECÁNICOS</h2>
-            <li>Realizar frecuentes evaluaciones de riesgos.</li>
-            <li>Aplicar mantenimiento preventivo a todas las máquinas de forma periódica.</li>
-            <li>Conservar registros históricos sobre el desempeño de la máquina y los accidentes o incidentes relacionados con su funcionamiento.</li>
-            <li>Dotar a los trabajadores de los Equipos de Protección adecuados.</li>
-            <li>Diseñar planes de acción efectivos en caso de accidente.</li>
-            
-        </ul>
-        <ul *ngIf="data.tipo === 'Químico'">
-            <h2>ACCIDENTES QUÍMICOS</h2>
-            <li>Utilizar obligatoriamente Equipos de Protección Personal.</li>
-            <li>Limitar la exposición de cada empleado a los productos químicos en lo posible.</li>
-            <li>Supervisar la seguridad de los empleados realizando informes diarios sobre los posibles problemas.</li>
-            <li>Solucionar los problemas con un correcto etiquetado y capacitación para un almacenaje y manipulación más seguros.</li>
-        </ul>
-        <ul *ngIf="data.tipo === 'Biológico'">
-            <h2>ACCIDENTES BIOLÓGICO</h2>
-            <li>Establecer protocolos estrictos de trabajo.</li>
-            <li>Dotar a los trabajadores con Equipos de Protección Personal.</li>
-            <li>Adecuar instalaciones de aseo eficientes y suficientes.</li>
-            <li>Practicar revisiones médicas frecuentes.</li>
-            <li>Capacitar y entrenar a los trabajadores.</li>
-        </ul>
-        <ul *ngIf="data.tipo === 'Ergonómico'">
-            <h2>ACCIDENTES ERGONÓMICO</h2>
-            <li>Adecuando las sillas y el lugar de trabajo, de acuerdo con la estatura y el peso del trabajador.</li>
-            <li>Establecer rutinas de pausas activas.</li>
-            <li>Diseñando procesos y procedimientos de trabajo enfocados en la comodidad del trabajador.</li>
-        </ul>
-        <ul *ngIf="data.tipo === 'Psicosocial'">
-            <h2>ACCIDENTES PSICOSOCIAL</h2>
-            <li>Desarrollar e implementar programas de formación y capacitación sobre el tema.</li>
-            <li>Informar a todos los trabajadores de que tienen derecho a ser escuchados y respetados.</li>
-            <li>Conservar registros e informes sobre casos ocurridos y la forma en que se solucionaron.</li>
-            
-        </ul>
-
-  
+<div id="print" class="print">
+    <div nz-col style="text-align: center;">
+        <table class="tftable" border="1">
+            <tr>
+                <td colspan="2" align="center">REPORTE INMEDIATO DE ACCIDENTE/INCIDENTE DE TRABAJO</td>
+            </tr>
+            <tr>
+                <td align="left">Accidente <i class="fa-solid fa-square-check"></i></td>
+                <td align="left">Incidente <i class="fa-solid fa-square"></i></td>
+            </tr>
+            <tr>
+                <td align="left">Lugar y Fecha:{{data.lugar}} -{{data.fechaAccidente}} </td>
+                <td align="left">Código: {{data.codigo}}</td>
+            </tr>
+            <tr>
+                <td align="left" colspan="2">1.- DATOS GENERALES</td>
+            </tr>
+            <tr>
+                <td align="left">Nombres del Accidentado/Incidentado</td>
+                <td>{{data.nombre}}</td>
+            </tr>
+            <tr>
+                <td align="left">Cargo:</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td align="left">Edad:</td>
+                <td>{{data.edad}}</td>
+            </tr>
+            <tr>
+                <td align="left">Fecha y Hora del Accidente:</td>
+                <td>{{data.fechaAccidente}}</td>
+            </tr>
+            <tr>
+                <td align="left">Nombre del Testigo: </td>
+                <td>{{data.testigo}}</td>
+            </tr>
+            <tr>
+                <td align="left">Hospitalizacion o Reposo:</td>
+                <td>{{data.hospitalizacion}}</td>
+            </tr>
+            <tr>
+                <td align="left">BREVE DESCRIPCION DEL ACCIDENTE</td>
+                <td align="left">FOTOGRAFÍA</td>
+            </tr>
+            <tr>
+                <td>{{data.descripcion}}</td>
+                <td><img src="{{data.fotografia}}" width="300" height="200"></td>
+            </tr>
+        </table>
+    </div>
 </div>
+<button class="btn btn-primary btn-block btn-xl doNotPrint btn-xl" nz-button nzGhost (click)="printer()">
+    <i nz-icon type="printer" theme="outline"></i>Imprimir/Exportar PDF
+</button>

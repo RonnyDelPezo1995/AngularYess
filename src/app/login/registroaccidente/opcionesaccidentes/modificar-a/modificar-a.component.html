@@ -12,11 +12,13 @@
                 <tr>
                     <th>Código</th>
                     <th>Cédula</th>
-                    <th>Nombre </th>
-                    <th>Tipo</th>
-                    <th>Riesgo</th>
-                    <th>Fecha</th>
-                    <th>Motivo</th>
+                    <th>Nombre y Apellido</th>
+                    <th>Edad</th>
+                    <th>Lugar</th>
+                    <th>Fecha y Hora</th>
+                    <th>Testigo</th>
+                    <th>Hospitalizacion o Reposo</th>
+                    <th>Descripción</th>
                     <th>Modificar</th>
                 </tr>
             </thead>
@@ -25,10 +27,12 @@
                     <td>{{accidente.codigo}}</td>
                     <td>{{accidente.cedula}}</td>
                     <td>{{accidente.nombre}}</td>
-                    <td>{{accidente.tipo}}</td>
-                    <td>{{accidente.riesgo}}</td>
+                    <td>{{accidente.edad}}</td>
+                    <td>{{accidente.lugar}}</td>
                     <td>{{accidente.fechaAccidente}}</td>
-                    <td>{{accidente.motivo}}</td>
+                    <td>{{accidente.testigo}}</td>
+                    <td>{{accidente.hospitalizacion}}</td>
+                    <td>{{accidente.descripcion}}</td>
                     <td>
                         <i class="fa-solid fa-pen-clip text-info far" [routerLink]="['/modificarindividualaccidente/',accidente.id]"></i>
                     </td>

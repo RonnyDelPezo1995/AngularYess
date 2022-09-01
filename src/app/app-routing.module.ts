@@ -17,30 +17,32 @@ import { BuscarAComponent } from './login/registroaccidente/opcionesaccidentes/b
 import { EliminarIComponent } from './login/registroaccidente/opcionesincidentes/eliminar-i/eliminar-i.component';
 import { BuscarIComponent } from './login/registroaccidente/opcionesincidentes/buscar-i/buscar-i.component';
 import { ModificarindividualincidenteComponent } from './login/registroaccidente/opcionesincidentes/modificar-i/modificarindividualincidente/modificarindividualincidente.component';
+import { InformesComponent } from './informes/informes.component';
 
 const routes: Routes = [
   {path:'',redirectTo:'inicio',pathMatch:'full'},
   {path:'inicio',component:InicioComponent},
   {path:'login',component:LoginComponent},
   {path:'register',component:RegisterComponent},
+  {path:'informes',component:InformesComponent,...canActivate(()=>redirectUnauthorizedTo(['/register']))},
   {path:'login/registroaccidente',component:RegistroaccidenteComponent},
   {path:'login/registroaccidente/opcionesaccidentes',component:OpcionesaccidentesComponent},
   {path:'login/registroaccidente/opcionesincidentes',component:OpcionesincidentesComponent},
   {path:'registroaccidente',component:RegistroaccidenteComponent,...canActivate(()=>redirectUnauthorizedTo(['/register']))},
   {path:'opcionesaccidentes',component:OpcionesaccidentesComponent,...canActivate(()=>redirectUnauthorizedTo(['/register']))},
   {path:'opcionesincidentes',component:OpcionesincidentesComponent,...canActivate(()=>redirectUnauthorizedTo(['/register']))},
-  {path:'registrarA',component:RegistrarAComponent},
-  {path:'registrarI',component:RegistrarIComponent},
-  {path:'modificarA',component:ModificarAComponent},
-  {path:'modificarI',component:ModificarIComponent},
-  {path:'editarA/:id',component:RegistrarAComponent},
+  {path:'registrarA',component:RegistrarAComponent,...canActivate(()=>redirectUnauthorizedTo(['/register']))},
+  {path:'registrarI',component:RegistrarIComponent,...canActivate(()=>redirectUnauthorizedTo(['/register']))},
+  {path:'modificarA',component:ModificarAComponent,...canActivate(()=>redirectUnauthorizedTo(['/register']))},
+  {path:'modificarI',component:ModificarIComponent,...canActivate(()=>redirectUnauthorizedTo(['/register']))},
+  {path:'editarA/:id',component:RegistrarAComponent,...canActivate(()=>redirectUnauthorizedTo(['/register']))},
   {path:'modificarindividualaccidente/:id',component:ModificarindividualaccidenteComponent},
   {path:'modificarindividualincidente/:id',component:ModificarindividualincidenteComponent},
-  {path:'eliminarA',component:EliminarAComponent},
-  {path:'eliminarI',component:EliminarIComponent},
-  {path:'buscarAccidente',component:BuscarAComponent},
-  {path:'buscarIncidente',component:BuscarIComponent},
-  {path:'buscarA',component:BuscarAComponent},
+  {path:'eliminarA',component:EliminarAComponent,...canActivate(()=>redirectUnauthorizedTo(['/register']))},
+  {path:'eliminarI',component:EliminarIComponent,...canActivate(()=>redirectUnauthorizedTo(['/register']))},
+  {path:'buscarAccidente',component:BuscarAComponent,...canActivate(()=>redirectUnauthorizedTo(['/register']))},
+  {path:'buscarIncidente',component:BuscarIComponent,...canActivate(()=>redirectUnauthorizedTo(['/register']))},
+  {path:'buscarA',component:BuscarAComponent,...canActivate(()=>redirectUnauthorizedTo(['/register']))},
   {path:'**',redirectTo:'inicio',pathMatch:'full'}
   
 ];

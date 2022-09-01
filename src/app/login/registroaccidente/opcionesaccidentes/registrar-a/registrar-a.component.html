@@ -3,108 +3,203 @@
     <div class="text-center">
         <br>
         <h2>Registrar Accidente</h2>
-        <br>
     </div>
     <br>
 </div>
-<div class="container mt-4">
-    <div class="row">
-        <div class="col-lg-4">
-            <form [formGroup]="myForm" autocomplete="off">
-                <div class="col-lg-12">
-                    <mat-form-field class="example-contain" [style.fontSize.px]=16>
-                        <mat-label>Código</mat-label>
-                        <input matInput formControlName="codigo">
-                    </mat-form-field>
-                    <div *ngIf="myForm.get('codigo').hasError('required') && myForm.get('codigo').touched"
-                        style="margin-top: -20px;">
-                        <span class="rojo">Este campo es Requerido</span>
-                    </div>
-                </div>
-                <div class="col-lg-12">
-                    <mat-form-field class="example-contain" [style.fontSize.px]=16>
-                        <mat-label>Cedula</mat-label>
-                        <input matInput formControlName="cedula">
-                    </mat-form-field>
-                    <div *ngIf="myForm.get('cedula').hasError('required') && myForm.get('cedula').touched"
-                        style="margin-top: -20px;">
-                        <span class="rojo">Este campo es Requerido</span>
-                    </div>
-                </div>
-                <div class="col-lg-12">
-                    <mat-form-field class="example-contain" [style.fontSize.px]=16>
-                        <mat-label>Nombre</mat-label>
-                        <input matInput formControlName="nombre">
-                    </mat-form-field>
-                    <div *ngIf="myForm.get('nombre').hasError('required') && myForm.get('nombre').touched"
-                        style="margin-top: -20px;">
-                        <span class="rojo">Este campo es Requerido</span>
-                    </div>
-                </div>
 
-                <div class="col-lg-12">
-                    <mat-form-field class="example-contain" appearance="fill">
-                        <mat-label>Tipo</mat-label>
-                        <mat-select [(value)]="selected1" formControlName="tipo">
-                            <mat-option>Escoger Tipo</mat-option>
-                            <mat-option value="Físico">Físico</mat-option>
-                            <mat-option value="Mecánico">Mecánico</mat-option>
-                            <mat-option value="Químico">Químico</mat-option>
-                            <mat-option value="Biológico">Biológico</mat-option>
-                            <mat-option value="Ergonómico">Ergonómico</mat-option>
-                            <mat-option value="Psicosocial">Psicosocial</mat-option>
-                        </mat-select>
-                    </mat-form-field>
-                    <div *ngIf="myForm.get('tipo').hasError('required') && myForm.get('tipo').touched"
-                        style="margin-top: -20px;">
-                        <span class="rojo">Este campo es Requerido</span>
-                    </div>
-                </div>
+<form [formGroup]="myForm" autocomplete="off">
+    <table class="tftable">
+        <tr>
+            <th>
+                <mat-form-field class="example-contain" [style.fontSize.px]=16>
+                    <mat-label>Código</mat-label>
+                    <input matInput formControlName="codigo">
+                </mat-form-field>
+                
+            </th>
+            <th>
+                <mat-form-field class="example-contain" [style.fontSize.px]=16>
+                    <mat-label>Apellidos y Nombres</mat-label>
+                    <input matInput formControlName="nombre">
+                </mat-form-field>
+                
+            </th>
+        </tr>
+        <tr>
+            <td>
 
-                <div class="col-lg-12">
-                    <mat-form-field class="example-contain" appearance="fill">
-                        <mat-label>Riesgo</mat-label>
-                        <mat-select [(value)]="selected2" formControlName="riesgo">
-                            <mat-option>Escoger Riesgo</mat-option>
-                            <mat-option value="Bajo">Bajo</mat-option>
-                            <mat-option value="Medio">Medio</mat-option>
-                            <mat-option value="Alto">Alto</mat-option>
-                        </mat-select>
-                    </mat-form-field>
-                    <div *ngIf="myForm.get('riesgo').hasError('required') && myForm.get('riesgo').touched"
-                        style="margin-top: -20px;">
-                        <span class="rojo">Este campo es Requerido</span>
-                    </div>
-                </div>
-                <div class="col-lg-12">
-                    <mat-form-field class="example-contain" [style.fontSize.px]=16>
-                        <mat-label>Fecha de Accidente</mat-label>
-                        <input matInput formControlName="fechaAccidente" placeholder="dd/mm/yyyy">
-                    </mat-form-field>
-                    <div *ngIf="myForm.get('fechaAccidente').hasError('required') && myForm.get('fechaAccidente').touched"
-                        style="margin-top: -20px;">
-                        <span class="rojo">Este campo es Requerido</span>
-                    </div>
-                </div>
-
-                <div class="col-lg-12">
-                    <mat-form-field class="example-contain" [style.fontSize.px]=16>
-                        <mat-label>Motivo</mat-label>
-                        <input matInput formControlName="motivo">
-                    </mat-form-field>
-                    <div *ngIf="myForm.get('motivo').hasError('required') && myForm.get('motivo').touched"
-                        style="margin-top: -20px;">
-                        <span class="rojo">Este campo es Requerido</span>
-                    </div>
-                </div>
-
-            </form>
-        </div>
-    </div>
-
+                <mat-form-field class="example-contain" [style.fontSize.px]=16>
+                    <mat-label>Cedula</mat-label>
+                    <input matInput formControlName="cedula">
+                </mat-form-field>
+                
+            </td>
+            <td>
+                <mat-form-field class="example-contain" [style.fontSize.px]=16>
+                    <mat-label>Edad</mat-label>
+                    <input matInput formControlName="edad">
+                </mat-form-field>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <mat-form-field class="example-contain" [style.fontSize.px]=16>
+                    <mat-label>Lugar</mat-label>
+                    <input matInput formControlName="lugar">
+                </mat-form-field>
+                
+            </td>
+            <td>
+                <mat-form-field class="example-contain" [style.fontSize.px]=16>
+                    <mat-label>Fecha y Hora de Accidente</mat-label>
+                    <input matInput formControlName="fechaAccidente" placeholder="dd/mm/yyyy hh:mm">
+                </mat-form-field>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <mat-form-field class="example-contain" [style.fontSize.px]=16>
+                    <mat-label>Testigo</mat-label>
+                    <input matInput formControlName="testigo">
+                </mat-form-field>
+            </td>
+            <td>
+                <mat-form-field class="example-contain" appearance="fill">
+                    <mat-label>Hospitalizacion o Reposo</mat-label>
+                    <mat-select [(value)]="selected2" formControlName="hospitalizacion">
+                        <mat-option>Seleccionar Opción</mat-option>
+                        <mat-option value="Hospitalización">Hospitalización</mat-option>
+                        <mat-option value="Reposo">Reposo</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <mat-form-field class="example-contain" [style.fontSize.px]=16>
+                    <mat-label>Fotografia</mat-label>
+                    <input matInput formControlName="fotografia">
+                </mat-form-field>
+            </td>
+            <td>
+                <mat-form-field class="example-contain" [style.fontSize.px]=16>
+                    <mat-label>Descripcion</mat-label>
+                    <input matInput formControlName="descripcion">
+                </mat-form-field>
+            </td>
+        </tr>
+    </table>
     <div class="d-flex justify-content-between">
         <button [routerLink]="['/login/registroaccidente/opcionesaccidentes']"
             class="btn btn-primary btn-block btn-xl">Atrás</button>
-        <button class="btn btn-primary btn-block btn-xl" [disabled]="myForm.invalid" (click)="guardarAccidente()">Guardar</button>
+        <button class="btn btn-primary btn-block btn-xl" [disabled]="myForm.invalid"
+            (click)="guardarAccidente()">Guardar</button>
+    </div>
+</form>
+
+
+<!--<div class="container mt-4">
+<div class="row">
+    <div class="col-lg-4">
+        <form [formGroup]="myForm" autocomplete="off">
+            <div class="col-lg-12">
+                <mat-form-field class="example-contain" [style.fontSize.px]=16>
+                    <mat-label>Código</mat-label>
+                    <input matInput formControlName="codigo">
+                </mat-form-field>
+                <div *ngIf="myForm.get('codigo').hasError('required') && myForm.get('codigo').touched"
+                    style="margin-top: -20px;">
+                    <span class="rojo">Este campo es Requerido</span>
+                </div>
+            </div>
+            <div class="col-lg-12">
+                <mat-form-field class="example-contain" [style.fontSize.px]=16>
+                    <mat-label>Cedula</mat-label>
+                    <input matInput formControlName="cedula">
+                </mat-form-field>
+                <div *ngIf="myForm.get('cedula').hasError('required') && myForm.get('cedula').touched"
+                    style="margin-top: -20px;">
+                    <span class="rojo">Este campo es Requerido</span>
+                </div>
+            </div>
+            <div class="col-lg-12">
+                <mat-form-field class="example-contain" [style.fontSize.px]=16>
+                    <mat-label>Nombre</mat-label>
+                    <input matInput formControlName="nombre">
+                </mat-form-field>
+                <div *ngIf="myForm.get('nombre').hasError('required') && myForm.get('nombre').touched"
+                    style="margin-top: -20px;">
+                    <span class="rojo">Este campo es Requerido</span>
+                </div>
+            </div>
+
+            <div class="col-lg-12">
+                <mat-form-field class="example-contain" appearance="fill">
+                    <mat-label>Tipo</mat-label>
+                    <mat-select [(value)]="selected1" formControlName="tipo">
+                        <mat-option>Escoger Tipo</mat-option>
+                        <mat-option value="Físico">Físico</mat-option>
+                        <mat-option value="Mecánico">Mecánico</mat-option>
+                        <mat-option value="Químico">Químico</mat-option>
+                        <mat-option value="Biológico">Biológico</mat-option>
+                        <mat-option value="Ergonómico">Ergonómico</mat-option>
+                        <mat-option value="Psicosocial">Psicosocial</mat-option>
+                    </mat-select>
+                </mat-form-field>
+                <div *ngIf="myForm.get('tipo').hasError('required') && myForm.get('tipo').touched"
+                    style="margin-top: -20px;">
+                    <span class="rojo">Este campo es Requerido</span>
+                </div>
+            </div>
+
+            <div class="col-lg-12">
+                <mat-form-field class="example-contain" appearance="fill">
+                    <mat-label>Riesgo</mat-label>
+                    <mat-select [(value)]="selected2" formControlName="riesgo">
+                        <mat-option>Escoger Riesgo</mat-option>
+                        <mat-option value="Bajo">Bajo</mat-option>
+                        <mat-option value="Medio">Medio</mat-option>
+                        <mat-option value="Alto">Alto</mat-option>
+                    </mat-select>
+                </mat-form-field>
+                <div *ngIf="myForm.get('riesgo').hasError('required') && myForm.get('riesgo').touched"
+                    style="margin-top: -20px;">
+                    <span class="rojo">Este campo es Requerido</span>
+                </div>
+            </div>
+            <div class="col-lg-12">
+                <mat-form-field class="example-contain" [style.fontSize.px]=16>
+                    <mat-label>Fecha de Accidente</mat-label>
+                    <input matInput formControlName="fechaAccidente" placeholder="dd/mm/yyyy">
+                </mat-form-field>
+                <div *ngIf="myForm.get('fechaAccidente').hasError('required') && myForm.get('fechaAccidente').touched"
+                    style="margin-top: -20px;">
+                    <span class="rojo">Este campo es Requerido</span>
+                </div>
+            </div>
+
+            <div class="col-lg-12">
+                <mat-form-field class="example-contain" [style.fontSize.px]=16>
+                    <mat-label>Motivo</mat-label>
+                    <input matInput formControlName="motivo">
+                </mat-form-field>
+                <div *ngIf="myForm.get('motivo').hasError('required') && myForm.get('motivo').touched"
+                    style="margin-top: -20px;">
+                    <span class="rojo">Este campo es Requerido</span>
+                </div>
+            </div>
+
+        </form>
     </div>
 </div>
+
+<div class="d-flex justify-content-between">
+    <button [routerLink]="['/login/registroaccidente/opcionesaccidentes']"
+        class="btn btn-primary btn-block btn-xl">Atrás</button>
+    <button class="btn btn-primary btn-block btn-xl" [disabled]="myForm.invalid"
+        (click)="guardarAccidente()">Guardar</button>
+</div>
+</div>
+-->

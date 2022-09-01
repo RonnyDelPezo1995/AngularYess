@@ -14,4 +14,8 @@ export class RecomendacionesIComponent implements OnInit {
     console.log(this.data);
   }
 
+  printer() {
+    window.print();
+  }
+
 }

@@ -4,6 +4,7 @@ import { AccidenteService } from 'src/app/services/accidente.service';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatDialog } from '@angular/material/dialog';
 import { RecomendacionesAComponent } from './recomendaciones-a/recomendaciones-a.component';
+import { Title } from '@angular/platform-browser';
 
 
 
@@ -15,10 +16,10 @@ import { RecomendacionesAComponent } from './recomendaciones-a/recomendaciones-a
 export class BuscarAComponent implements OnInit {
   listAccidentes: Accidente[] = [];
 
-  displayedColumns: string[] = ['codigo','cedula','nombre', 'tipo', 'riesgo', 'fecha', 'motivo', 'acciones'];
+  displayedColumns: string[] = ['codigo','cedula','nombre', 'edad', 'lugar', 'fecha', 'testigo', 'hospitalizacion','descripcion','acciones'];
   dataSource = new MatTableDataSource(this.listAccidentes);
   constructor(private _accidenteService: AccidenteService,
-    public dialog: MatDialog) { }
+    public dialog: MatDialog,private titulo:Title) {titulo.setTitle('Informe de Accidentes') }
 
   //dataSource1 = new MatTableDataSource(this.dataSource);
 
@@ -41,14 +42,24 @@ export class BuscarAComponent implements OnInit {
     const filterValue = (event.target as HTMLInputElement).value;
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
-  abrirRecomendaciones(tipo:string){
+  abrirRecomendaciones(codigo:string,cedula:string,nombre:string,edad:string,lugar:string,fechaAccidente:string,testigo:string,hospitalizacion:string,fotografia:string,descripcion:string){
     const dialogRef=this.dialog.open(RecomendacionesAComponent, {
-      width:'350px',
+      width:'1000px',
+      height:'1500px',
       data: {
-        tipo
+        codigo,
+        cedula,
+        nombre,
+        edad,
+        lugar,
+        fechaAccidente,
+        testigo,
+        hospitalizacion,
+        fotografia,
+        descripcion
       },
     });
-    console.log(tipo)
+    console.log(codigo, cedula, nombre, edad)
   }
 
 

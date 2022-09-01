@@ -1,10 +1,10 @@
 p{
     font-family: 'Montserrat',sans-serif;
     font-size: 40px;
-    color: #ff7130;
+    color: #fd0000;
 }
 hr{
-    border-color: #ff7130;
+    border-color: #fd0000;
     border-width: 3px;
 }
 
@@ -15,14 +15,15 @@ hr{
 }
 
 .btn-xl{
-    background-color: #ff7130;
-    border-color: #ff7130;
+    background-color: #fd0000;
+    border-color: #fd0000;
     padding: 1rem 2rem;
     border-radius: 300px;
+    width: 200px;
 }
 
 .btn-xl:hover{
-    background-color: #ee4b08;
-    border-color: #ee4b08;
+    background-color: #000000;
+    border-color: #000000;
     border-width: 4px;
 }

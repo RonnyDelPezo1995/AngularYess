@@ -4,6 +4,7 @@ import { documentId } from '@angular/fire/firestore';
 import { identity } from 'rxjs';
 import { Accidente } from 'src/app/models/Accidente';
 import { AccidenteService } from 'src/app/services/accidente.service';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-modificar-a',
@@ -15,7 +16,7 @@ export class ModificarAComponent implements OnInit {
 
   displayedColumns: string[] = ['codigo','cedula','nombre', 'tipo', 'riesgo','fecha','motivo','acciones'];
   dataSource = this.listAccidentes;
-  constructor(private _accidenteService: AccidenteService) { }
+  constructor(private _accidenteService: AccidenteService,private titulo:Title) {titulo.setTitle('Modificar Accidente') }
   
   ngOnInit(): void {
     this.obtenerAccidentes();

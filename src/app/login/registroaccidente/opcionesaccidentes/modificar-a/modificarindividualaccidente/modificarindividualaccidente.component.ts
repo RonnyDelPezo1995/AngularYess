@@ -4,6 +4,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { ActivatedRoute } from '@angular/router';
 import { Accidente } from 'src/app/models/Accidente';
 import { AccidenteService } from 'src/app/services/accidente.service';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-modificarindividualaccidente',
@@ -20,18 +21,23 @@ export class ModificarindividualaccidenteComponent implements OnInit {
   constructor(private fb:FormBuilder,
     private _accidenteService:AccidenteService,
     private aRoute: ActivatedRoute,
-    public snackBar: MatSnackBar) {
+    public snackBar: MatSnackBar,
+    private titulo:Title) {
     this.myForm=this.fb.group({
       codigo:['',[Validators.required,Validators.maxLength(6)]],
       cedula:['',[Validators.required,Validators.minLength(10)]],
       nombre:['',Validators.required],
-      tipo:['',Validators.required],
-      riesgo:['',Validators.required],
-      fechaAccidente:['',Validators.required],
-      motivo:['',Validators.required]
+      edad:['',Validators.required],
+          lugar:['',Validators.required],
+          fechaAccidente:['',Validators.required],
+          testigo:['',Validators.required],
+          hospitalizacion:['',Validators.required],
+          fotografia:['',Validators.required],
+          descripcion:['',Validators.required]
     });
     this.id=this.aRoute.snapshot.paramMap.get('id');
     console.log(this.id)
+    titulo.setTitle('Modificar Accidente')
    }
 
   ngOnInit(): void {
@@ -46,10 +52,13 @@ export class ModificarindividualaccidenteComponent implements OnInit {
           codigo:[this.accidente.codigo,[Validators.required,Validators.maxLength(6)]],
           cedula:[this.accidente.cedula,[Validators.required,Validators.minLength(10)]],
           nombre:[this.accidente.nombre,Validators.required],
-          tipo:[this.accidente.tipo,Validators.required],
-          riesgo:[this.accidente.riesgo,Validators.required],
+          edad:[this.accidente.edad,Validators.required],
+          lugar:[this.accidente.lugar,Validators.required],
           fechaAccidente:[this.accidente.fechaAccidente,Validators.required],
-          motivo:[this.accidente.motivo,Validators.required]
+          testigo:[this.accidente.testigo,Validators.required],
+          hospitalizacion:[this.accidente.hospitalizacion,Validators.required],
+          fotografia:[this.accidente.fotografia,Validators.required],
+          descripcion:[this.accidente.descripcion,Validators.required]
         });
       });
       
@@ -60,10 +69,13 @@ obtenernuevoAccidente(){
     codigo: this.myForm.get('codigo')?.value,
     cedula:this.myForm.get('cedula')?.value,
     nombre: this.myForm.get('nombre')?.value,
-    tipo: this.myForm.get('tipo')?.value,
-    riesgo: this.myForm.get('riesgo')?.value,
+    edad: this.myForm.get('edad')?.value,
+    lugar: this.myForm.get('lugar')?.value,
     fechaAccidente: this.myForm.get('fechaAccidente')?.value,
-    motivo: this.myForm.get('motivo')?.value
+    testigo: this.myForm.get('testigo')?.value,
+    hospitalizacion: this.myForm.get('hospitalizacion')?.value,
+    fotografia: this.myForm.get('fotografia')?.value,
+    descripcion: this.myForm.get('descripcion')?.value
   };
   console.log(accidente);
 

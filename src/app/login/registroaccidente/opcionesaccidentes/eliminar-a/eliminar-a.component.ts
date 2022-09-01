@@ -3,6 +3,7 @@ import { Accidente } from 'src/app/models/Accidente';
 import { AccidenteService } from 'src/app/services/accidente.service';
 
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-eliminar-a',
@@ -14,7 +15,7 @@ export class EliminarAComponent implements OnInit {
 
   displayedColumns: string[] = ['codigo', 'nombre', 'tipo', 'riesgo','fecha','motivo','acciones'];
   dataSource = this.listAccidentes;
-  constructor(private _accidenteService: AccidenteService,public snackBar: MatSnackBar) { }
+  constructor(private _accidenteService: AccidenteService,public snackBar: MatSnackBar,private titulo:Title) { titulo.setTitle('Eliminar Accidente')}
 
   ngOnInit(): void {
     this.obtenerAccidentes();

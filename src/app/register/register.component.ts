@@ -3,6 +3,7 @@ import { FormControl, FormGroup,FormsModule,ReactiveFormsModule } from '@angular
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 import { UserService } from 'src/app/services/user.service';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-register',
@@ -18,12 +19,14 @@ export class RegisterComponent implements OnInit {
   constructor(
     private userService: UserService,
     private router: Router,
-    public snackBar: MatSnackBar
+    public snackBar: MatSnackBar,
+    public titulo:Title
   ) {
     this.formReg = new FormGroup({
       email: new FormControl(),
       password: new FormControl()
     })
+    titulo.setTitle('Registro')
   }
   ngOnInit(): void {
   }

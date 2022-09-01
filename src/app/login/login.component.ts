@@ -5,6 +5,7 @@ import { UserService } from 'src/app/services/user.service';
 
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { timeInterval } from 'rxjs';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-login',
@@ -19,8 +20,11 @@ export class LoginComponent implements OnInit {
   constructor(
     private userService: UserService,
     private router: Router,
-    public snackBar: MatSnackBar
-  ) { }
+    public snackBar: MatSnackBar,
+    private titulo:Title
+  ) {
+    titulo.setTitle('Inicio de Sesíon')
+   }
 
   ngOnInit(): void {
   }
@@ -39,9 +43,9 @@ export class LoginComponent implements OnInit {
         })
       })
       .catch(error => console.log(error));
-      this.snackBar.open('Los Datos son incorrectos','',{
-        duration:1000
-      })
+      ///this.snackBar.open('Los Datos son incorrectos','',{
+      //  duration:1000
+      //})
       
   }
 }

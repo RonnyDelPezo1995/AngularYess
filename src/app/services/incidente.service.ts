@@ -53,10 +53,12 @@ export class IncidenteService {
       codigo:incidente.codigo,
       cedula:incidente.cedula,
       nombre:incidente.nombre,
-      tipo:incidente.tipo,
-      riesgo:incidente.riesgo,
+      edad:incidente.edad,
+      lugar:incidente.lugar,
       fechaIncidente:incidente.fechaIncidente,
-      motivo:incidente.motivo
+      testigo:incidente.testigo,
+      fotografia:incidente.fotografia,
+      descripcion:incidente.descripcion
     });
   }
 

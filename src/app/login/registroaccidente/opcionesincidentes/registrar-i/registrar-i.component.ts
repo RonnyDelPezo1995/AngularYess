@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Incidente } from 'src/app/models/Incidente';
 import { IncidenteService } from 'src/app/services/incidente.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-registrar-i',
@@ -20,16 +21,20 @@ export class RegistrarIComponent implements OnInit {
   myForm: FormGroup;
   constructor(private fb:FormBuilder,
     private _incidenteService: IncidenteService,
-    public snackBar: MatSnackBar) {
+    public snackBar: MatSnackBar,
+    private titulo:Title) {
       this.myForm=this.fb.group({
         codigo:['',[Validators.required,Validators.maxLength(6)]],
         cedula:['',[Validators.required,Validators.minLength(10)]],
         nombre:['',Validators.required],
-        tipo:['',Validators.required],
-        riesgo:['',Validators.required],
+        edad:['',Validators.required],
+        lugar:['',Validators.required],
         fechaIncidente:['',Validators.required],
-        motivo:['',Validators.required]
+        testigo:['',Validators.required],
+        fotografia:['',Validators.required],
+        descripcion:['',Validators.required]
       });
+      titulo.setTitle('Registrar Incidente')
      }
 
   ngOnInit(): void {
@@ -40,10 +45,12 @@ export class RegistrarIComponent implements OnInit {
       codigo: this.myForm.get('codigo')?.value,
       cedula: this.myForm.get('cedula')?.value,
       nombre: this.myForm.get('nombre')?.value,
-      tipo: this.myForm.get('tipo')?.value,
-      riesgo: this.myForm.get('riesgo')?.value,
+      edad: this.myForm.get('edad')?.value,
+      lugar: this.myForm.get('lugar')?.value,
       fechaIncidente: this.myForm.get('fechaIncidente')?.value,
-      motivo: this.myForm.get('motivo')?.value
+      testigo: this.myForm.get('testigo')?.value,
+      fotografia: this.myForm.get('fotografia')?.value,
+      descripcion: this.myForm.get('descripcion')?.value
     };
     console.log(incidente);
     const response = await this._incidenteService.guardarIncidente(incidente);

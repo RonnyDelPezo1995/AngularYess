@@ -3,18 +3,25 @@ export class Accidente{
     codigo:string;
     cedula:string;
     nombre:string;
-    tipo:string;
-    riesgo:string;
+    edad:string;
+    lugar:string;
     fechaAccidente:string;
-    motivo:string;
+    testigo:string;
+    hospitalizacion:string;
+    fotografia:string;
+    descripcion:string;
 
-    constructor(codigo:string,cedula:string,nombre:string,tipo:string,riesgo:string,fechaAccidente:string,motivo:string){
+    constructor(codigo:string,cedula:string,nombre:string,edad:string,lugar:string,fechaAccidente:string,testigo:string,hospitalizacion:string,fotografia:string,descripcion:string){
         this.codigo=codigo;
         this.cedula=cedula;
         this.nombre=nombre;
-        this.tipo=tipo;
-        this.riesgo=riesgo;
+        this.edad=edad;
+        this.lugar=lugar;
         this.fechaAccidente=fechaAccidente;
-        this.motivo=motivo;
+        this.testigo=testigo;
+        this.hospitalizacion=hospitalizacion;
+        this.fotografia=fotografia;
+        this.descripcion=descripcion;
+
     }
 }

@@ -49,10 +49,13 @@ export class AccidenteService {
       codigo:accidente.codigo,
       cedula:accidente.cedula,
       nombre:accidente.nombre,
-      tipo:accidente.tipo,
-      riesgo:accidente.riesgo,
+      edad:accidente.edad,
+      lugar:accidente.lugar,
       fechaAccidente:accidente.fechaAccidente,
-      motivo:accidente.motivo
+      testigo:accidente.testigo,
+      hospitalizacion:accidente.hospitalizacion,
+      fotografia:accidente.fotografia,
+      descripcion:accidente.descripcion
     });
   }
 

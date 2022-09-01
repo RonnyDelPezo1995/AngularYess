@@ -13,10 +13,10 @@
                     <th>Código</th>
                     <th>Cédula</th>
                     <th>Nombre</th>
-                    <th>Tipo</th>
-                    <th>Riesgo</th>
-                    <th>Fecha</th>
-                    <th>Motivo</th>
+                    <th>Edad</th>
+                    <th>Lugar</th>
+                    <th>Fecha y Hora</th>
+                    <th>Testigo</th>
                     <th>Eliminar</th>
                 </tr>
             </thead>
@@ -25,10 +25,10 @@
                     <td>{{accidente.codigo}}</td>
                     <td>{{accidente.cedula}}</td>
                     <td>{{accidente.nombre}}</td>
-                    <td>{{accidente.tipo}}</td>
-                    <td>{{accidente.riesgo}}</td>
+                    <td>{{accidente.edad}}</td>
+                    <td>{{accidente.lugar}}</td>
                     <td>{{accidente.fechaAccidente}}</td>
-                    <td>{{accidente.motivo}}</td>
+                    <td>{{accidente.hospitalizacion}}</td>
                     <td>
                         <i class="fa-solid fa-trash-can far" (click)="borrarAccidente(accidente)"></i>
                     </td>

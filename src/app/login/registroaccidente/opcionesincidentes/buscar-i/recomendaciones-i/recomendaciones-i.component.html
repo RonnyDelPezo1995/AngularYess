@@ -1,23 +1,52 @@
-<h1 mat-dialog-title>Recomendaciones</h1>
-<div mat-dialog-content>
 
-        <ul *ngIf="data.tipo === 'Químico'">
-            <h2>INCIDENTES QUÍMICOS</h2>
-            <li>Sustitución de agentes químicos peligrosos.</li>
-            <li>Organización del lugar de trabajo.</li>
-            <li>Adopción de medidas higiénicas adecuadas, tanto personales como de orden y limpieza.</li>
-        </ul>
-        <ul *ngIf="data.tipo === 'Agentes Biológicos'">
-            <h2>INCIDENTES AGENTES BIÓLOGICOS</h2>
-            <li>Evite la formación de aerosoles y polvos, incluso en labores de mantenimiento.</li>
-            <li>Higiene en los procedimientos de trabajo y el uso de letreros de advertencia adecuados son elementos básicos de condiciones de trabajo seguras.</li>
-            <li>Descontaminación de residuos, equipos y prendas de vestir, y medidas higiénicas apropiadas para los trabajadores</li>
-            
-        </ul>
-        <ul *ngIf="data.tipo === 'Posturas'">
-            <h2>INCIDENETES POSTURAS</h2>
-            <li>Conviene tener una silla con respaldo ajustable; que los pies lleguen al suelo, y el peso del cuerpo se sostenga con los glúteos y no con los muslos.</li>
-            <li>Tener la pantalla a una altura un poco más baja que la de los ojos; que los objetos de la mesa se tiene que poder alcanzar sin problemas, y hacer estiramientos leves cada hora.</li>
-        </ul>
-  
+<div id="print" class="print">
+    <div nz-col style="text-align: center;">
+        <table class="tftable" border="1">
+            <tr>
+                <td colspan="2" align="center">REPORTE INMEDIATO DE ACCIDENTE/INCIDENTE DE TRABAJO</td>
+            </tr>
+            <tr>
+                <td align="left">Accidente <i class="fa-solid fa-square"></i></td>
+                <td align="left">Incidente  <i class="fa-solid fa-square-check"></i></td>
+            </tr>
+            <tr>
+                <td align="left">Lugar y Fecha: {{data.lugar}} - {{data.fechaIncidente}} </td>
+                <td align="left">Código: {{data.codigo}}</td>
+            </tr>
+            <tr>
+                <td colspan="2" align="left">1.- DATOS GENERALES</td>
+            </tr>
+            <tr>
+                <td align="left">Nombres del Accidentado/Incidentado</td>
+                <td>{{data.nombre}}</td>
+            </tr>
+            <tr>
+                <td align="left">Cargo:</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td align="left">Edad:</td>
+                <td>{{data.edad}}</td>
+            </tr>
+            <tr>
+                <td align="left">Fecha y Hora del Accidente:</td>
+                <td>{{data.fechaIncidente}}</td>
+            </tr>
+            <tr>
+                <td align="left">Nombre del Testigo: </td>
+                <td>{{data.testigo}}</td>
+            </tr>
+            <tr>
+                <td align="left">BREVE DESCRIPCION DEL ACCIDENTE</td>
+                <td align="left">FOTOGRAFÍA</td>
+            </tr>
+            <tr>
+                <td>{{data.descripcion}}</td>
+                <td><img src="{{data.fotografia}}" width="300" height="200"></td>
+            </tr>
+        </table>
+    </div>
 </div>
+<button class="btn btn-primary btn-block btn-xl doNotPrint btn-xl" nz-button nzGhost (click)="printer()">
+    <i nz-icon type="printer" theme="outline"></i>Imprimir/Exportar PDF
+</button>
