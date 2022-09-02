@@ -55,7 +55,8 @@ export class AccidenteService {
       testigo:accidente.testigo,
       hospitalizacion:accidente.hospitalizacion,
       fotografia:accidente.fotografia,
-      descripcion:accidente.descripcion
+      descripcion:accidente.descripcion,
+      cargo:accidente.cargo
     });
   }
 

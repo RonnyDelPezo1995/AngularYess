@@ -32,7 +32,8 @@ export class RegistrarIComponent implements OnInit {
         fechaIncidente:['',Validators.required],
         testigo:['',Validators.required],
         fotografia:['',Validators.required],
-        descripcion:['',Validators.required]
+        descripcion:['',Validators.required],
+        cargo:['',Validators.required]
       });
       titulo.setTitle('Registrar Incidente')
      }
@@ -50,7 +51,8 @@ export class RegistrarIComponent implements OnInit {
       fechaIncidente: this.myForm.get('fechaIncidente')?.value,
       testigo: this.myForm.get('testigo')?.value,
       fotografia: this.myForm.get('fotografia')?.value,
-      descripcion: this.myForm.get('descripcion')?.value
+      descripcion: this.myForm.get('descripcion')?.value,
+      cargo:this.myForm.get('cargo')?.value,
     };
     console.log(incidente);
     const response = await this._incidenteService.guardarIncidente(incidente);

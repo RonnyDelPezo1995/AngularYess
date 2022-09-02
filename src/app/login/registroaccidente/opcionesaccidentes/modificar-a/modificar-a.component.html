@@ -43,6 +43,13 @@
         <div class="d-flex justify-content-between">
             <button [routerLink]="['/opcionesaccidentes']" class="btn btn-primary btn-block btn-xl">Atrás</button>
         </div>
+        <ul hidden>
+            <li *ngFor="let codigo of listcodigos1">
+                {{codigo}}
+                <app-modificarindividualaccidente [listCodigos]="listcodigos1"></app-modificarindividualaccidente>
+            </li>
+            
+        </ul>
 
 
 

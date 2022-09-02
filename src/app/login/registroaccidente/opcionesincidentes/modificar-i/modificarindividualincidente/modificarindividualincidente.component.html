@@ -80,12 +80,15 @@
                 </mat-form-field>
             </td>
             <td>
-
+                <mat-form-field class="example-contain" [style.fontSize.px]=16>
+                    <mat-label>Cargo</mat-label>
+                    <input matInput formControlName="cargo">
+                </mat-form-field>
             </td>
         </tr>
     </table>
     <div class="d-flex justify-content-between">
-        <button [routerLink]="['/login/registroaccidente/opcionesincidentes']"
+        <button [routerLink]="['/modificarI']"
             class="btn btn-primary btn-block btn-xl">Atrás</button>
         <button class="btn btn-primary btn-block btn-xl" [disabled]="myForm.invalid"
             (click)="obtenernuevoIncidente()">Modificar</button>

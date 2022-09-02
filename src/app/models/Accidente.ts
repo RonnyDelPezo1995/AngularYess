@@ -10,8 +10,10 @@ export class Accidente{
     hospitalizacion:string;
     fotografia:string;
     descripcion:string;
+    cargo:string;
 
-    constructor(codigo:string,cedula:string,nombre:string,edad:string,lugar:string,fechaAccidente:string,testigo:string,hospitalizacion:string,fotografia:string,descripcion:string){
+    constructor(codigo:string,cedula:string,nombre:string,edad:string,lugar:string,fechaAccidente:string,
+        testigo:string,hospitalizacion:string,fotografia:string,descripcion:string,cargo:string){
         this.codigo=codigo;
         this.cedula=cedula;
         this.nombre=nombre;
@@ -22,6 +24,7 @@ export class Accidente{
         this.hospitalizacion=hospitalizacion;
         this.fotografia=fotografia;
         this.descripcion=descripcion;
+        this.cargo=cargo;
 
     }
 }

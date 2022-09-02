@@ -32,7 +32,8 @@ export class RegistrarAComponent implements OnInit {
           testigo:['',Validators.required],
           hospitalizacion:['',Validators.required],
           fotografia:['',Validators.required],
-          descripcion:['',Validators.required]
+          descripcion:['',Validators.required],
+          cargo:['',Validators.required]
     });
     titulo.setTitle('Registrar Accidente')
    }
@@ -50,7 +51,8 @@ export class RegistrarAComponent implements OnInit {
       testigo: this.myForm.get('testigo')?.value,
       hospitalizacion: this.myForm.get('hospitalizacion')?.value,
       fotografia: this.myForm.get('fotografia')?.value,
-      descripcion: this.myForm.get('descripcion')?.value
+      descripcion: this.myForm.get('descripcion')?.value,
+      cargo: this.myForm.get('cargo')?.value
     };
     console.log(accidente);
     const response = await this._accidenteService.guardarAccidente(accidente);

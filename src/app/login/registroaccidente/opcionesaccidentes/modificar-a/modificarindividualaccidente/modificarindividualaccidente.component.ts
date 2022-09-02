@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,Input } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { ActivatedRoute } from '@angular/router';
@@ -16,6 +16,7 @@ export class ModificarindividualaccidenteComponent implements OnInit {
   selected2 = 'none'
   id:string |null
   accidente?:Accidente;
+  @Input() listCodigos:any;
 
   myForm: FormGroup;
   constructor(private fb:FormBuilder,
@@ -33,11 +34,13 @@ export class ModificarindividualaccidenteComponent implements OnInit {
           testigo:['',Validators.required],
           hospitalizacion:['',Validators.required],
           fotografia:['',Validators.required],
-          descripcion:['',Validators.required]
+          descripcion:['',Validators.required],
+          cargo:['',Validators.required]
     });
     this.id=this.aRoute.snapshot.paramMap.get('id');
     console.log(this.id)
     titulo.setTitle('Modificar Accidente')
+    console.log(this.listCodigos,'Se imprime')
    }
 
   ngOnInit(): void {
@@ -58,7 +61,8 @@ export class ModificarindividualaccidenteComponent implements OnInit {
           testigo:[this.accidente.testigo,Validators.required],
           hospitalizacion:[this.accidente.hospitalizacion,Validators.required],
           fotografia:[this.accidente.fotografia,Validators.required],
-          descripcion:[this.accidente.descripcion,Validators.required]
+          descripcion:[this.accidente.descripcion,Validators.required],
+          cargo:[this.accidente.cargo,Validators.required]
         });
       });
       
@@ -75,10 +79,12 @@ obtenernuevoAccidente(){
     testigo: this.myForm.get('testigo')?.value,
     hospitalizacion: this.myForm.get('hospitalizacion')?.value,
     fotografia: this.myForm.get('fotografia')?.value,
-    descripcion: this.myForm.get('descripcion')?.value
+    descripcion: this.myForm.get('descripcion')?.value,
+    cargo:this.myForm.get('cargo')?.value
   };
   console.log(accidente);
 
+  
   const response = this._accidenteService.actualizarAccidente(accidente,this.id);
   this.snackBar.open('El ACCIDENTE se MODIFICO correctamente','',{
     duration:3000

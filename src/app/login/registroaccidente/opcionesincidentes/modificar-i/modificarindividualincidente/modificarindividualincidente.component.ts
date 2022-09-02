@@ -33,7 +33,9 @@ export class ModificarindividualincidenteComponent implements OnInit {
           fechaIncidente:['',Validators.required],
           testigo:['',Validators.required],
           fotografia:['',Validators.required],
-          descripcion:['',Validators.required]
+          descripcion:['',Validators.required],
+          cargo:['',Validators.required],
+
       });
       this.id=this.aRoute.snapshot.paramMap.get('id');
     console.log(this.id)
@@ -57,7 +59,8 @@ export class ModificarindividualincidenteComponent implements OnInit {
           fechaIncidente:[this.incidente.fechaIncidente,Validators.required],
           testigo:[this.incidente.testigo,Validators.required],
           fotografia:[this.incidente.fotografia,Validators.required],
-          descripcion:[this.incidente.descripcion,Validators.required]
+          descripcion:[this.incidente.descripcion,Validators.required],
+          cargo:[this.incidente.cargo,Validators.required]
         });
       });
       
@@ -73,7 +76,8 @@ obtenernuevoIncidente(){
     fechaIncidente: this.myForm.get('fechaIncidente')?.value,
     testigo: this.myForm.get('testigo')?.value,
     fotografia: this.myForm.get('fotografia')?.value,
-    descripcion: this.myForm.get('descripcion')?.value
+    descripcion: this.myForm.get('descripcion')?.value,
+    cargo: this.myForm.get('cargo')?.value,
   };
   console.log(incidente);
 

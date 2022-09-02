@@ -58,7 +58,8 @@ export class IncidenteService {
       fechaIncidente:incidente.fechaIncidente,
       testigo:incidente.testigo,
       fotografia:incidente.fotografia,
-      descripcion:incidente.descripcion
+      descripcion:incidente.descripcion,
+      cargo:incidente.cargo
     });
   }
 

@@ -38,7 +38,8 @@ export class BuscarIComponent implements OnInit {
     const filterValue = (event.target as HTMLInputElement).value;
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
-  abrirRecomendaciones(codigo:string,cedula:string,nombre:string,edad:string,lugar:string,fechaIncidente:string,testigo:string,fotografia:string,descripcion:string){
+  abrirRecomendaciones(codigo:string,cedula:string,nombre:string,edad:string,lugar:string,
+    fechaIncidente:string,testigo:string,fotografia:string,descripcion:string,cargo:string){
     const dialogRef=this.dialog.open(RecomendacionesIComponent, {
       width:'1000px',
       height:'1500px',
@@ -51,7 +52,8 @@ export class BuscarIComponent implements OnInit {
         fechaIncidente,
         testigo,
         fotografia,
-        descripcion
+        descripcion,
+        cargo
       },
     });
     console.log(codigo,cedula)

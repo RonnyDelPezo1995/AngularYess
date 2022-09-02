@@ -13,6 +13,8 @@ import { Title } from '@angular/platform-browser';
 })
 export class ModificarAComponent implements OnInit {
   listAccidentes: Accidente[]= [];
+  listcodigos1:any[]=[];
+  listcodigos2:any[]=[];
 
   displayedColumns: string[] = ['codigo','cedula','nombre', 'tipo', 'riesgo','fecha','motivo','acciones'];
   dataSource = this.listAccidentes;
@@ -25,9 +27,16 @@ export class ModificarAComponent implements OnInit {
   obtenerAccidentes(){
     this._accidenteService.obtenerAccidentes().subscribe(doc=>{
       
-      console.log(doc);
+      //console.log(doc);
       this.listAccidentes=doc;
-      
+      console.log(this.listAccidentes)
+      console.log(this.listAccidentes.length);
+      for (let i = 0; i < this.listAccidentes.length; i++) {
+        console.log(this.listAccidentes[i].codigo);
+        this.listcodigos1.push(this.listAccidentes[i].codigo);
+    }
+    this.listcodigos2=this.listcodigos1;
+    console.log(this.listcodigos2,'listacodigos2');
       this.dataSource=this.listAccidentes;
     })
   }
